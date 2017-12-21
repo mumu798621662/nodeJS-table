@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th style="text-align: center">ID</th>
+            <th style="text-align: center">姓名</th>
+            <th style="text-align: center">性别</th>
+            <th style="text-align: center">年龄</th>
+            <th style="text-align: center">操作</th>
+        </tr>
+        <% for(var i=0;i<result.length;i++){
+        %>
+        <tr>
+            <td style="text-align: center"><%=result[i].id%></td>
+            <td style="text-align: center"><%=result[i].name%></td>
+            <td style="text-align: center"><%=result[i].sex%></td>
+            <td style="text-align: center"><%=result[i].age%></td>
+            <td style="text-align: center">
+                <a href="/add"><button class="btn btn-primary">添加</button></a>
+                <a href="/update/<%=result[i].id%>&<%=result[i].name%>&<%=result[i].sex%>&<%=result[i].age%>"><button class="btn btn-success">修改</button></a>
+                <a href="/del/id=<%=result[i].id%>"><button class="btn btn-info">删除</button></a>
+            </td>
+        </tr>
+        <%}%>
+    </table>
+
+</div>
+</body>
+</html>
